@@ -10,7 +10,7 @@
         :key="index"
         :value="option.value"
       >
-        {{ option.label }}
+        {{ option.value }}
       </option>
     </select>
   </div>
@@ -22,6 +22,11 @@ export default {
     options: {
       type: Array,
       required: true,
+      default: () => [
+        { label: "Option 1", value: "option1" },
+        { label: "Option 2", value: "option2" },
+        { label: "Option 3", value: "option3" },
+      ],
     },
   },
   data() {
