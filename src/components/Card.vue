@@ -1,11 +1,17 @@
 <template>
-  <div class="card">
-    <div class="media" :style="mediaBg" v-if="mediaHref"></div>
-    <h4 class="title">{{ title }}</h4>
+  <div class="card" role="region" :aria-label="title">
+    <div
+      class="media"
+      :style="mediaBg"
+      v-if="mediaHref"
+      role="img"
+      :aria-label="title + ' image'"
+    ></div>
+    <h4 class="title" role="heading" aria-level="2">{{ title }}</h4>
     <small class="secondary-text">{{ subHeader }}</small>
     <p class="supporting-tex">{{ supportingText }}</p>
     <div v-if="buttonText">
-      <a class="material-button">{{ buttonText }}</a>
+      <a class="material-button" role="button">{{ buttonText }}</a>
     </div>
   </div>
 </template>

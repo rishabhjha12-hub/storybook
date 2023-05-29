@@ -1,5 +1,16 @@
+<!-- <template>
+  <button :style="buttonStyle">{{ label }}</button>
+  
+</template> -->
 <template>
-  <button class="border-8 border-green-500" :style="buttonStyle">{{ label }}</button>
+  <button
+    :style="buttonStyle"
+    :aria-label="label"
+    :aria-disabled="false"
+    :aria-haspopup="false"
+  >
+    {{ label }}
+  </button>
 </template>
 
 <script>
