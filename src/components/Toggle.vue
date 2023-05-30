@@ -1,15 +1,18 @@
 <template>
   <button
-    :class="['rounded-full w-12 h-6 focus:outline-none transition-colors']"
+    :class="[
+      'rounded-full w-12 h-6 focus:outline-none transition-colors',
+      { 'bg-gray-300': !isActive, 'bg-green-500': isActive }
+    ]"
     :style="{ backgroundColor: activeColor }"
     @click="toggle"
+    :aria-pressed="isActive.toString()"
+    role="switch"
   >
     <span
       :class="[
         'rounded-full block w-6 h-6 transform transition-transform',
-        {
-          'translate-x-6': isActive,
-        },
+        { 'translate-x-6': isActive }
       ]"
       :style="{ backgroundColor: activeButtonColor }"
     ></span>
@@ -21,11 +24,11 @@ export default {
   props: {
     bgButtonColor: {
       type: String,
-      default: "black",
+      default: 'black',
     },
     bgcolor: {
       type: String,
-      default: "grey",
+      default: 'grey',
     },
   },
   data() {
