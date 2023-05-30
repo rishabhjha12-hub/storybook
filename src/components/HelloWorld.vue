@@ -1,5 +1,6 @@
 <script>
 import SelectDropdown from "./Dropdown.vue";
+import Toggle from "./Toggle.vue";
 
 export default {
   components: {
